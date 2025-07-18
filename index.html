@@ -2,16 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TCE-components</title>
   <style>
+    html {
+      scroll-behavior: smooth; /* 平滑滚动 */
+    }
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f9f9f9;
+      font-family: Arial, sans-serif;
       color: #333;
-      padding-top: 80px; /* Top nav space */
+      background: #f9f9f9;
+      /* 去除滚动条，使用 container 内滚动 */
+      overflow: hidden;
+      height: 100vh;
     }
     nav {
       position: fixed;
@@ -24,16 +28,17 @@
     }
     nav ul {
       list-style: none;
+      margin: 0;
+      padding: 0;
       display: flex;
       justify-content: center;
       gap: 25px;
-      margin: 0;
-      padding: 0;
     }
     nav ul li a {
       text-decoration: none;
       color: #003366;
       font-weight: bold;
+      cursor: pointer;
     }
     nav ul li a:hover {
       color: #0066cc;
@@ -41,30 +46,35 @@
     header {
       background-color: #003366;
       color: white;
-      padding: 30px 20px;
       text-align: center;
+      padding: 40px 20px;
     }
     header h1 {
       margin: 0;
-      font-size: 2em;
+      font-size: 2.5em;
     }
     .container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
+      height: 100vh; /* 容器满屏 */
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory; /* 开启吸附 */
+      -webkit-overflow-scrolling: touch;
     }
     section {
-      margin-bottom: 40px;
+      height: 100vh; /* 每个版块满屏 */
+      padding: 60px 20px 40px; /* 留导航和内容间距 */
+      box-sizing: border-box;
+      scroll-snap-align: start; /* 吸附对齐 */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 900px;
+      margin: 0 auto;
     }
     h2 {
       color: #003366;
+      margin-bottom: 20px;
     }
-    .contact {
-      background-color: #eee;
-      padding: 20px;
-      border-radius: 8px;
-    }
-    /* Strong Brand */
+    /* Strong Brand 图片排布 */
     #strongbrand div {
       display: flex;
       flex-wrap: wrap;
@@ -74,13 +84,19 @@
     }
     #strongbrand img {
       height: 60px;
-      flex: 0 0 18%; /* About 5 per row with gap */
+      flex: 0 0 18%;
       max-width: 100%;
       transition: transform 0.3s ease;
       cursor: pointer;
     }
     #strongbrand img:hover {
       transform: scale(1.1);
+    }
+    .contact {
+      background-color: #eee;
+      padding: 20px;
+      border-radius: 8px;
+      color: #333;
     }
     .footer {
       text-align: center;
@@ -90,17 +106,19 @@
       color: white;
     }
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.5em;
-      }
       nav ul {
         flex-direction: column;
-        align-items: center;
         gap: 15px;
       }
+      header h1 {
+        font-size: 1.8em;
+      }
       #strongbrand img {
-        flex: 0 0 40%; /* 两列布局，手机更友好 */
+        flex: 0 0 40%;
         margin-bottom: 10px;
+      }
+      section {
+        padding: 40px 15px;
       }
     }
   </style>
@@ -116,18 +134,17 @@
     </ul>
   </nav>
 
-  <header>
-    <h1>TCE-components</h1>
-    <p>Your Trusted Partner in Industrial Electronics & Semiconductors</p>
-  </header>
-
   <div class="container">
     <section id="about">
+      <header>
+        <h1>TCE-components</h1>
+        <p>Your Trusted Partner in Industrial Electronics & Semiconductors</p>
+      </header>
       <h2>About Us</h2>
       <p>
-        TCE components is a professional independent distributor of industrial electronic components, based in China.
-        We specialize in supplying hard-to-find and obsolete parts from top brands such as ADI, TI, Xlinx, ST, CYPRESS, Microchip, TRACO POWER and more.
-        Our mission is to provide fast, reliable sourcing and shipping solutions for clients worldwide.
+        TCE components is a reliable distributor of industrial electronic components based in Wuhan, China. 
+        We specialize in sourcing hard-to-find and obsolete parts from top brands such as ADI, TI, Xilinx, ST, CYPRESS, Microchip, TRACO POWER, and more. 
+        Our mission is to provide fast, dependable, and customized solutions to clients worldwide.
       </p>
     </section>
 
