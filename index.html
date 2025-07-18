@@ -2,104 +2,156 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TCE Components</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
-    header, section {
-      padding: 60px 20px;
-      text-align: center;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
     }
     header {
-      background-color: #003366;
-      color: white;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      z-index: 999;
     }
-    .section-light {
-      background-color: #f4f4f4;
-    }
-    .brands img {
-      max-width: 120px;
-      margin: 15px;
-    }
-    .brand-gallery {
+    nav {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
     }
-    .advantages img {
-      max-width: 400px;
-      margin-top: 20px;
+    nav a {
+      text-decoration: none;
+      color: #333;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+    section {
+      padding: 100px 20px 60px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .hero {
+      background: #f0f0f0;
+      text-align: center;
+      padding: 160px 20px 100px;
+    }
+    .hero img {
+      max-width: 100%;
+      height: auto;
       border-radius: 8px;
     }
-    .contact a {
-      color: #003366;
-      text-decoration: none;
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      font-weight: bold;
     }
-    .image-gallery {
+    .brand-logos {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 20px;
-      padding: 20px;
+      gap: 1rem;
       justify-items: center;
+      align-items: center;
+      padding-top: 1rem;
     }
-    .image-gallery img {
-      width: 100%;
-      max-width: 180px;
+    .brand-logos img {
+      max-width: 100px;
+      height: auto;
+      filter: grayscale(100%);
+    }
+    .contact p {
+      margin: 0.3rem 0;
+      line-height: 1.6;
+    }
+    .advantage-images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .advantage-images img {
+      max-width: 48%;
       border-radius: 8px;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Welcome to TCE Components</h1>
-  <p>Professional Supplier of Electronic Components</p>
-  <img src="https://i.ibb.co/PdP4Lzb/team-work-3.jpg" alt="team-work-3" style="max-width:400px; margin-top: 20px; border-radius: 8px;">
-</header>
+  <!-- Header & Navigation -->
+  <header>
+    <nav>
+      <div><strong>TCE Components</strong></div>
+      <div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#advantages">Our Advantages</a>
+        <a href="#brand">Strong Brand</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-<section class="section-light">
-  <h2>About Us</h2>
-  <p>TCE Components is a professional supplier of electronic components based in China. We focus on providing reliable, high-quality parts from trusted manufacturers.</p>
-</section>
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <h1>Welcome to TCE Components</h1>
+    <p>Your reliable electronic parts supplier</p>
+    <img src="https://i.ibb.co/PdP4Lzb/team-work-3.jpg" alt="team-work-3" />
+  </section>
 
-<section>
-  <h2>Strong Brand</h2>
-  <p>Whatever you're looking for — we have it all.</p>
-  <div class="image-gallery">
-    <img src="https://i.ibb.co/QmvfD8M/brand1.png" alt="Brand 1">
-    <img src="https://i.ibb.co/dg3fLpt/brand2.png" alt="Brand 2">
-    <img src="https://i.ibb.co/F6L57Nn/brand3.png" alt="Brand 3">
-    <img src="https://i.ibb.co/KrQqsWq/brand4.png" alt="Brand 4">
-    <img src="https://i.ibb.co/p4M5zNH/brand5.png" alt="Brand 5">
-    <img src="https://i.ibb.co/WGG61JX/brand6.png" alt="Brand 6">
-    <img src="https://i.ibb.co/Sxg30qT/brand7.png" alt="Brand 7">
-    <img src="https://i.ibb.co/k4zPtWq/brand8.png" alt="Brand 8">
-    <img src="https://i.ibb.co/ZmXL51F/brand9.png" alt="Brand 9">
-    <img src="https://i.ibb.co/tcM0nmB/brand10.png" alt="Brand 10">
-  </div>
-</section>
+  <!-- About -->
+  <section id="about">
+    <h2 class="section-title">About Us</h2>
+    <p>
+      TCE Components is a trusted global supplier of electronic components, dedicated to offering fast response, competitive pricing, and high-quality service. Our mission is to support your business by delivering reliable components, whether for urgent needs or long-term procurement.
+    </p>
+    <img src="https://i.ibb.co/tprf1sGM/office.jpg" alt="company-office" style="max-width:100%; margin-top:20px; border-radius: 8px;">
+  </section>
 
-<section class="section-light advantages">
-  <h2>Our Advantages</h2>
-  <p>Fast response, genuine parts, professional service.</p>
-  <img src="https://i.ibb.co/Dg5Km7V3/team-work-1.jpg" alt="team-work-1">
-</section>
+  <!-- Our Advantages -->
+  <section id="advantages">
+    <h2 class="section-title">Our Advantages</h2>
+    <ul>
+      <li>Fast response and professional support</li>
+      <li>Access to obsolete and hard-to-find components</li>
+      <li>Strong sourcing and global supplier network</li>
+    </ul>
+    <div class="advantage-images">
+      <img src="https://i.ibb.co/Dg5Km7V3/team-work-1.jpg" alt="team-work-1">
+      <img src="https://i.ibb.co/tprf1sGM/office.jpg" alt="office-again">
+    </div>
+  </section>
 
-<section>
-  <h2>Company Office</h2>
-  <img src="https://i.ibb.co/tprf1sGM/office.jpg" alt="office" style="max-width:600px; border-radius: 8px;">
-</section>
+  <!-- Strong Brand -->
+  <section id="brand">
+    <h2 class="section-title">Strong Brand</h2>
+    <p style="text-align: center;">We have what you are looking for.</p>
+    <div class="brand-logos">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Logo_Siemens.svg" alt="Siemens">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Parker_Hannifin_logo.svg" alt="Parker">
+      <img src="https://www.ipf.de/fileadmin/_processed_/0/2/csm_ipf-logo.svg" alt="IPF">
+      <img src="https://www.ifm.com/etc/designs/ifm_theme/images/logo.svg" alt="IFM">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/AUMA_logo.svg" alt="Auma">
+      <img src="https://www.st.com/content/dam/logos/st-logo.png" alt="ST">
+      <img src="https://www.analog.com/-/media/analog-com/logos/adi-logo.png" alt="ADI">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Texas_Instruments_logo.svg" alt="TI">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Infineon_Logo.svg" alt="Infineon">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/NXP_Semiconductors_logo.svg" alt="NXP">
+    </div>
+  </section>
 
-<section class="section-light contact">
-  <h2>Contact Us</h2>
-  <p>Email: tina [at] tce-components.shop</p>
-  <p>Website: <a href="https://www.tce-components.shop" target="_blank">www.tce-components.shop</a></p>
-</section>
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <p>🌐 Website: www.tce-components.shop</p>
+    <p>📧 Email: [your email here]</p>
+    <p>📍 Location: Wuhan, China</p>
+  </section>
 
 </body>
 </html>
