@@ -6,14 +6,13 @@
   <title>TCE-components</title>
   <style>
     html {
-      scroll-behavior: smooth; /* 平滑滚动 */
+      scroll-behavior: smooth;
     }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       color: #333;
       background: #f9f9f9;
-      /* 去除滚动条，使用 container 内滚动 */
       overflow: hidden;
       height: 100vh;
     }
@@ -54,16 +53,16 @@
       font-size: 2.5em;
     }
     .container {
-      height: 100vh; /* 容器满屏 */
+      height: 100vh;
       overflow-y: scroll;
-      scroll-snap-type: y mandatory; /* 开启吸附 */
+      scroll-snap-type: y mandatory;
       -webkit-overflow-scrolling: touch;
     }
     section {
-      height: 100vh; /* 每个版块满屏 */
-      padding: 60px 20px 40px; /* 留导航和内容间距 */
+      height: 100vh;
+      padding: 60px 20px 40px;
       box-sizing: border-box;
-      scroll-snap-align: start; /* 吸附对齐 */
+      scroll-snap-align: start;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -74,7 +73,37 @@
       color: #003366;
       margin-bottom: 20px;
     }
-    /* Strong Brand 图片排布 */
+
+    /* 左右两栏布局 */
+    .two-column {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+    .two-column .text {
+      flex: 1;
+      font-size: 1.1em;
+      line-height: 1.5;
+    }
+    .two-column .image {
+      flex: 1;
+      max-width: 100%;
+      text-align: center;
+    }
+    .two-column .image img {
+      max-width: 100%;
+      max-height: 300px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Strong Brand 区背景 */
+    #strongbrand {
+      background-color: #f0f0f0;
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
     #strongbrand div {
       display: flex;
       flex-wrap: wrap;
@@ -105,13 +134,14 @@
       background: #003366;
       color: white;
     }
-    @media (max-width: 600px) {
-      nav ul {
+
+    @media (max-width: 900px) {
+      .two-column {
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
       }
-      header h1 {
-        font-size: 1.8em;
+      .two-column .image img {
+        max-height: 250px;
       }
       #strongbrand img {
         flex: 0 0 40%;
@@ -135,32 +165,48 @@
   </nav>
 
   <div class="container">
+
     <section id="about">
       <header>
         <h1>TCE-components</h1>
         <p>Your Trusted Partner in Industrial Electronics & Semiconductors</p>
       </header>
-      <h2>About Us</h2>
-      <p>
-        TCE components is a reliable distributor of industrial electronic components based in Wuhan, China. 
-        We specialize in sourcing hard-to-find and obsolete parts from top brands such as ADI, TI, Xilinx, ST, CYPRESS, Microchip, TRACO POWER, and more. 
-        Our mission is to provide fast, dependable, and customized solutions to clients worldwide.
-      </p>
+
+      <div class="two-column">
+        <div class="text">
+          <h2>About Us</h2>
+          <p>
+            TCE components is a reliable distributor of industrial electronic components based in Wuhan, China. 
+            We specialize in sourcing hard-to-find and obsolete parts from top brands such as ADI, TI, Xilinx, ST, CYPRESS, Microchip, TRACO POWER, and more. 
+            Our mission is to provide fast, dependable, and customized solutions to clients worldwide.
+          </p>
+        </div>
+        <div class="image">
+          <img src="images/about-company.jpg" alt="Company Office" />
+        </div>
+      </div>
     </section>
 
     <section id="advantages">
-      <h2>Our Advantages</h2>
-      <ul>
-        <li>✔️ Trusted industrial brands</li>
-        <li>✔️ Fast response and delivery</li>
-        <li>✔️ English/Russian/Chinese support</li>
-        <li>✔️ Experienced in sourcing and logistics</li>
-      </ul>
+      <div class="two-column">
+        <div class="image">
+          <img src="images/advantages.jpg" alt="Advantages" />
+        </div>
+        <div class="text">
+          <h2>Our Advantages</h2>
+          <ul>
+            <li>✔️ Trusted industrial brands</li>
+            <li>✔️ Fast response and delivery</li>
+            <li>✔️ English/Russian/Chinese support</li>
+            <li>✔️ Experienced in sourcing and logistics</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <section id="strongbrand">
       <h2>Strong Brand</h2>
-      <p>Whatever you’re looking for, we’ve got it.</p>
+      <p style="text-align:center; margin-bottom: 40px;">Whatever you’re looking for, we’ve got it.</p>
       <div>
         <img src="images/brand1.png" alt="Brand 1" />
         <img src="images/brand2.png" alt="Brand 2" />
@@ -181,6 +227,7 @@
       <p>Website: www.tce-components.com</p>
       <p>Location: Wuhan Huashiyuan North Road Science and Technology Port</p>
     </section>
+
   </div>
 
   <footer class="footer">
