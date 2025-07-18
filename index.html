@@ -5,10 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>TCE-components</title>
 <style>
-  /* Reset & base */
-  * {
-    box-sizing: border-box;
-  }
+  * { box-sizing: border-box; }
   body, html {
     margin: 0; padding: 0;
     font-family: Arial, sans-serif;
@@ -16,12 +13,8 @@
     background: #fff;
     scroll-behavior: smooth;
   }
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
+  a { text-decoration: none; color: inherit; }
 
-  /* Navbar */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -47,7 +40,6 @@
     color: #007acc;
   }
 
-  /* Hero / Home Section */
   #home {
     position: relative;
     width: 100%;
@@ -87,24 +79,20 @@
     background-color: #005f99;
   }
 
-  /* Sections container */
   .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 80px 20px 40px; /* top padding to avoid nav */
+    padding: 80px 20px 40px;
   }
-
   section {
     margin-bottom: 60px;
   }
-
   h2 {
     color: #003366;
     margin-bottom: 20px;
     font-weight: 700;
   }
 
-  /* 左右布局通用样式 */
   .section-flex {
     display: flex;
     justify-content: space-between;
@@ -119,6 +107,9 @@
   }
   .section-flex .image {
     flex: 0 0 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
   }
   .section-flex .image img {
     width: 100%;
@@ -127,7 +118,6 @@
     object-fit: cover;
   }
 
-  /* Advantages 列表 */
   #advantages ul {
     list-style: none;
     padding: 0;
@@ -149,7 +139,6 @@
     line-height: 1.4;
   }
 
-  /* Strong Brand */
   #strongbrand {
     background-color: #f0f0f0;
     padding: 40px 0;
@@ -178,7 +167,6 @@
     color: #444;
   }
 
-  /* Contact */
   #contact {
     max-width: 900px;
     margin: 0 auto 40px;
@@ -189,8 +177,11 @@
   #contact p {
     margin: 6px 0;
   }
+  #contact a {
+    color: #007acc;
+    font-weight: bold;
+  }
 
-  /* Footer */
   footer {
     background: #003366;
     color: white;
@@ -199,7 +190,6 @@
     font-size: 0.9rem;
   }
 
-  /* Responsive */
   @media (max-width: 900px) {
     #home h1 {
       font-size: 2.5rem;
@@ -217,7 +207,8 @@
       margin-bottom: 15px;
     }
     #strongbrand img {
-      flex: 0 0 40%;
+      flex: 0 0 45%;
+      height: 50px;
     }
     nav ul {
       gap: 15px;
@@ -241,13 +232,13 @@
   <div class="content" style="max-width:1200px; margin: 0 auto; padding: 90px 20px 0;">
     <h1>TCE-components</h1>
     <p>Your Trusted Partner in Industrial Electronics & Semiconductors</p>
-    <a href="#contact" class="btn" style="background:#007acc;color:#fff;padding:0.8em 2em;border-radius:5px;display:inline-block;text-decoration:none;font-weight:600;">Contact Us</a>
+    <a href="#contact" class="btn">Contact Us</a>
   </div>
 </section>
 
 <div class="container">
 
-  <!-- About Us 左右布局 -->
+  <!-- About Us -->
   <section id="about">
     <h2>About Us</h2>
     <div class="section-flex">
@@ -264,12 +255,13 @@
         </p>
       </div>
       <div class="image">
-        <img src="https://i.ibb.co/chfXnHjt/efb20397c4d98961c33d6fc23b8aae90.jpg" alt="Office and Team Work" />
+        <img src="https://i.ibb.co/chfXnHjt/efb20397c4d98961c33d6fc23b8aae90.jpg" alt="Office" />
+        <img src="https://i.ibb.co/5kB6Tcq/team2.jpg" alt="Team" />
       </div>
     </div>
   </section>
 
-  <!-- Advantages 左右布局 -->
+  <!-- Advantages -->
   <section id="advantages">
     <h2>Our Advantages</h2>
     <div class="section-flex">
@@ -277,40 +269,30 @@
         <ul>
           <li>
             <div class="icon">✔️</div>
-            <div class="desc">
-              <strong>Trusted industrial brands</strong><br/>
-              We source from top global manufacturers ensuring quality.
-            </div>
+            <div class="desc"><strong>Trusted industrial brands</strong><br/>We source from top global manufacturers ensuring quality.</div>
           </li>
           <li>
             <div class="icon">✔️</div>
-            <div class="desc">
-              <strong>Fast response and delivery</strong><br/>
-              Quick turnaround times to meet your project deadlines.
-            </div>
+            <div class="desc"><strong>Fast response and delivery</strong><br/>Quick turnaround times to meet your project deadlines.</div>
           </li>
           <li>
             <div class="icon">✔️</div>
-            <div class="desc">
-              <strong>English/Russian/Chinese support</strong><br/>
-              Multilingual team ready to assist you anytime.
-            </div>
+            <div class="desc"><strong>English/Russian/Chinese support</strong><br/>Multilingual team ready to assist you anytime.</div>
           </li>
           <li>
             <div class="icon">✔️</div>
-            <div class="desc">
-              <strong>Experienced in sourcing and logistics</strong><br/>
-              Efficient supply chain management ensures smooth delivery.
-            </div>
+            <div class="desc"><strong>Experienced in sourcing and logistics</strong><br/>Efficient supply chain management ensures smooth delivery.</div>
           </li>
         </ul>
       </div>
       <div class="image">
-        <img src="https://i.ibb.co/c96MdMj/333.png" alt="Team Collaboration" />
+        <img src="https://i.ibb.co/c96MdMj/333.png" alt="Collaboration" />
+        <img src="https://i.ibb.co/TcSKdPM/logistics.jpg" alt="Logistics" />
       </div>
     </div>
   </section>
 
+  <!-- Strong Brand -->
   <section id="strongbrand">
     <h2>Strong Brand</h2>
     <p>Whatever you’re looking for, we’ve got it.</p>
@@ -328,12 +310,14 @@
     </div>
   </section>
 
+  <!-- Contact -->
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>Email: tina@tce-components.com</p>
-    <p>Website: www.tce-component.shop</p>
+    <p>Email: <a href="mailto:tina@tce-components.com">tina@tce-components.com</a></p>
+    <p>Website: <a href="https://www.tce-component.shop" target="_blank">www.tce-component.shop</a></p>
     <p>Location: Wuhan Huashiyuan North Road Science and Technology Port</p>
   </section>
+
 </div>
 
 <footer>
