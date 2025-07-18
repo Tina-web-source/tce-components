@@ -63,37 +63,24 @@
       padding: 60px 20px 40px;
       box-sizing: border-box;
       scroll-snap-align: start;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
       max-width: 900px;
       margin: 0 auto;
+      overflow: auto;
     }
     h2 {
       color: #003366;
       margin-bottom: 20px;
     }
 
-    /* 左右两栏布局 */
-    .two-column {
-      display: flex;
-      gap: 40px;
-      align-items: center;
-      justify-content: center;
-    }
-    .two-column .text {
-      flex: 1;
+    /* About Us 文字环绕图片 */
+    #about p {
       font-size: 1.1em;
-      line-height: 1.5;
+      line-height: 1.6;
     }
-    .two-column .image {
-      flex: 1;
-      max-width: 100%;
-      text-align: center;
-    }
-    .two-column .image img {
-      max-width: 100%;
-      max-height: 300px;
+    #about img {
+      float: right;
+      margin: 0 0 10px 20px;
+      max-width: 40%;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       object-fit: contain;
@@ -163,12 +150,11 @@
     }
 
     @media (max-width: 900px) {
-      .two-column {
-        flex-direction: column;
-        gap: 20px;
-      }
-      .two-column .image img {
-        max-height: 250px;
+      #about img {
+        float: none;
+        display: block;
+        margin: 0 auto 20px;
+        max-width: 80%;
       }
       #strongbrand img {
         flex: 0 0 40%;
@@ -176,6 +162,11 @@
       }
       section {
         padding: 40px 15px;
+        height: auto;
+      }
+      .container {
+        height: auto;
+        overflow-y: visible;
       }
     }
   </style>
@@ -194,19 +185,13 @@
   <div class="container">
 
     <section id="about">
-      <div class="two-column">
-        <div class="text">
-          <h2>About Us</h2>
-          <p>
-            TCE components is a reliable distributor of industrial electronic components based in Wuhan, China. 
-            We specialize in sourcing hard-to-find and obsolete parts from top brands such as ADI, TI, Xilinx, ST, CYPRESS, Microchip, TRACO POWER, and more. 
-            Our mission is to provide fast, dependable, and customized solutions to clients worldwide.
-          </p>
-        </div>
-        <div class="image">
-          <img src="https://i.ibb.co/chfXnHjt/efb20397c4d98961c33d6fc23b8aae90.jpg" alt="Office and Team Work" />
-        </div>
-      </div>
+      <h2>About Us</h2>
+      <p>
+        <img src="https://i.ibb.co/chfXnHjt/efb20397c4d98961c33d6fc23b8aae90.jpg" alt="Office and Team Work" />
+        TCE components is a reliable distributor of industrial electronic components based in Wuhan, China. 
+        We specialize in sourcing hard-to-find and obsolete parts from top brands such as ADI, TI, Xilinx, ST, CYPRESS, Microchip, TRACO POWER, and more. 
+        Our mission is to provide fast, dependable, and customized solutions to clients worldwide.
+      </p>
     </section>
 
     <section id="advantages">
