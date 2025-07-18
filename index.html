@@ -42,16 +42,6 @@
     nav ul li a:hover {
       color: #0066cc;
     }
-    header {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
     .container {
       height: 100vh;
       overflow-y: scroll;
@@ -70,6 +60,27 @@
     h2 {
       color: #003366;
       margin-bottom: 20px;
+    }
+
+    /* 首页大标题 */
+    #home {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #003366;
+      color: white;
+      height: 100vh;
+      text-align: center;
+      padding: 0 20px;
+    }
+    #home h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+    #home p {
+      font-size: 1.5em;
+      margin-top: 10px;
     }
 
     /* About Us 文字环绕图片 */
@@ -168,6 +179,12 @@
         height: auto;
         overflow-y: visible;
       }
+      #home h1 {
+        font-size: 2.2em;
+      }
+      #home p {
+        font-size: 1.2em;
+      }
     }
   </style>
 </head>
@@ -175,6 +192,7 @@
 
   <nav>
     <ul>
+      <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#advantages">Advantages</a></li>
       <li><a href="#strongbrand">Strong Brand</a></li>
@@ -183,6 +201,10 @@
   </nav>
 
   <div class="container">
+    <section id="home">
+      <h1>TCE-components</h1>
+      <p>Your Trusted Partner in Industrial Electronics & Semiconductors</p>
+    </section>
 
     <section id="about">
       <h2>About Us</h2>
@@ -195,44 +217,37 @@
     </section>
 
     <section id="advantages">
-      <div class="two-column">
-        <div class="image">
-          <img src="images/advantages.jpg" alt="Advantages" />
-        </div>
-        <div class="text">
-          <h2>Our Advantages</h2>
-          <ul>
-            <li>
-              <div class="icon">✔️</div>
-              <div class="desc">
-                <strong>Trusted industrial brands</strong><br/>
-                We source from top global manufacturers ensuring quality.
-              </div>
-            </li>
-            <li>
-              <div class="icon">✔️</div>
-              <div class="desc">
-                <strong>Fast response and delivery</strong><br/>
-                Quick turnaround times to meet your project deadlines.
-              </div>
-            </li>
-            <li>
-              <div class="icon">✔️</div>
-              <div class="desc">
-                <strong>English/Russian/Chinese support</strong><br/>
-                Multilingual team ready to assist you anytime.
-              </div>
-            </li>
-            <li>
-              <div class="icon">✔️</div>
-              <div class="desc">
-                <strong>Experienced in sourcing and logistics</strong><br/>
-                Efficient supply chain management ensures smooth delivery.
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <h2>Our Advantages</h2>
+      <ul>
+        <li>
+          <div class="icon">✔️</div>
+          <div class="desc">
+            <strong>Trusted industrial brands</strong><br/>
+            We source from top global manufacturers ensuring quality.
+          </div>
+        </li>
+        <li>
+          <div class="icon">✔️</div>
+          <div class="desc">
+            <strong>Fast response and delivery</strong><br/>
+            Quick turnaround times to meet your project deadlines.
+          </div>
+        </li>
+        <li>
+          <div class="icon">✔️</div>
+          <div class="desc">
+            <strong>English/Russian/Chinese support</strong><br/>
+            Multilingual team ready to assist you anytime.
+          </div>
+        </li>
+        <li>
+          <div class="icon">✔️</div>
+          <div class="desc">
+            <strong>Experienced in sourcing and logistics</strong><br/>
+            Efficient supply chain management ensures smooth delivery.
+          </div>
+        </li>
+      </ul>
     </section>
 
     <section id="strongbrand">
@@ -258,7 +273,6 @@
       <p>Website: www.tce-component.shop</p>
       <p>Location: Wuhan Huashiyuan North Road Science and Technology Port</p>
     </section>
-
   </div>
 
   <footer class="footer">
