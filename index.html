@@ -110,26 +110,27 @@
     line-height: 1.6;
     max-width: 900px;
   }
-  #about img {
-    max-width: 400px;
-    width: 100%;
+  /* 包裹两张图片容器 */
+  .about-images {
     float: right;
     margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+  }
+  .about-images img {
+    width: 100%;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    object-fit: contain;
   }
 
   /* Advantages */
-  #advantages {
-    display: flex;
-    justify-content: space-between;
-    max-width: 900px;
-    margin: 0 auto;
-  }
   #advantages ul {
     list-style: none;
     padding: 0;
-    width: 55%;
+    max-width: 900px;
   }
   #advantages li {
     display: flex;
@@ -145,19 +146,6 @@
   #advantages li .desc {
     font-size: 1rem;
     line-height: 1.4;
-  }
-  #advantages .images {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  #advantages .images img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    object-fit: cover;
-    max-height: 200px;
   }
 
   /* Strong Brand */
@@ -219,28 +207,18 @@
       font-size: 1.2rem;
       max-width: 100%;
     }
-    #about img {
+    /* 手机屏幕下 About 图片堆叠 */
+    .about-images {
       float: none;
-      display: block;
-      margin: 20px auto;
-      max-width: 90%;
-    }
-    #advantages {
-      flex-direction: column;
-    }
-    #advantages ul {
-      width: 100%;
-      margin-bottom: 30px;
-    }
-    #advantages .images {
-      width: 100%;
       flex-direction: row;
+      justify-content: center;
+      max-width: 100%;
+      margin: 20px 0;
       gap: 10px;
-      overflow-x: auto;
     }
-    #advantages .images img {
+    .about-images img {
+      width: auto;
       max-height: 150px;
-      flex: 0 0 auto;
     }
     #strongbrand img {
       flex: 0 0 40%;
@@ -275,7 +253,10 @@
   <section id="about">
     <h2>About Us</h2>
     <p>
-      <img src="https://i.ibb.co/chfXnHjt/efb20397c4d98961c33d6fc23b8aae90.jpg" alt="Office and Team Work" />
+      <span class="about-images">
+        <img src="https://i.ibb.co/chfXnHjt/efb20397c4d98961c33d6fc23b8aae90.jpg" alt="Office and Team Work" />
+        <img src="https://i.ibb.co/c96MdMj/333.png" alt="Additional Image" />
+      </span>
       TCE components is a reliable distributor of industrial electronic components based in Wuhan, China. We specialize in sourcing hard-to-find and obsolete parts from top brands such as ADI, TI, Xilinx, ST, CYPRESS, Microchip, TRACO POWER, and more.
     </p>
     <p>
@@ -288,6 +269,7 @@
   </section>
 
   <section id="advantages">
+    <h2>Our Advantages</h2>
     <ul>
       <li>
         <div class="icon">✔️</div>
@@ -318,11 +300,6 @@
         </div>
       </li>
     </ul>
-
-    <div class="images">
-      <img src="https://i.ibb.co/4ZW4fpbC/111.jpg" alt="Advantages Image 1" />
-      <img src="https://i.ibb.co/c96MdMj/333.png" alt="Advantages Image 2" />
-    </div>
   </section>
 
   <section id="strongbrand">
