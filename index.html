@@ -11,6 +11,29 @@
       padding: 0;
       background: #f9f9f9;
       color: #333;
+      padding-top: 80px; /* 顶部导航栏的空间 */
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #003366;
+      font-weight: bold;
     }
     header {
       background-color: #003366;
@@ -49,26 +72,40 @@
       header h1 {
         font-size: 1.5em;
       }
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- ✅ 导航栏 -->
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#advantages">Advantages</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
   <header>
     <h1>TCE-components</h1>
     <p>Your Trusted Partner in Industrial Electronics & Semiconductors</p>
   </header>
 
   <div class="container">
-    <section>
+    <section id="about">
       <h2>About Us</h2>
       <p>
         TCE components is a professional independent distributor of industrial electronic components, based in China.
-        We specialize in supplying hard-to-find and obsolete parts from top brands such as ADI, TI, Xlinx, ST, CYPRESS, Microchip,TRACO POWER and more.
+        We specialize in supplying hard-to-find and obsolete parts from top brands such as ADI, TI, Xlinx, ST, CYPRESS, Microchip, TRACO POWER and more.
         Our mission is to provide fast, reliable sourcing and shipping solutions for clients worldwide.
       </p>
     </section>
 
-    <section>
+    <section id="advantages">
       <h2>Our Advantages</h2>
       <ul>
         <li>✔️ Trusted industrial brands</li>
@@ -78,11 +115,11 @@
       </ul>
     </section>
 
-    <section class="contact">
+    <section id="contact" class="contact">
       <h2>Contact Us</h2>
       <p>Email: tina@tce-components.com</p>
       <p>Website: www.tce-components.com</p>
-      <p>Location: Wuhan Huashiyuan North Road Science and Technology Port
+      <p>Location: Wuhan Huashiyuan North Road Science and Technology Port</p>
       <!--Contact：+86 15972030970-->
     </section>
   </div>
