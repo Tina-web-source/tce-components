@@ -104,37 +104,34 @@
     font-weight: 700;
   }
 
-  /* About */
-  #about {
-    overflow: hidden; /* 清除浮动 */
-  }
-  #about p {
-    font-size: 1.1rem;
-    line-height: 1.6;
+  /* 左右布局通用样式 */
+  .section-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
     max-width: 900px;
   }
-  .about-images {
-    float: right;
-    margin-left: 20px;
-    width: 380px;
-    max-height: 360px; /* 限制右侧图片容器最大高度 */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* 两张图片上下分散对齐 */
+  .section-flex .text {
+    flex: 1 1 60%;
+    font-size: 1.1rem;
+    line-height: 1.6;
   }
-  .about-images img {
+  .section-flex .image {
+    flex: 0 0 35%;
+  }
+  .section-flex .image img {
     width: 100%;
-    max-height: 170px; /* 限制每张图片最大高度 */
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     object-fit: cover;
   }
 
-  /* Advantages */
+  /* Advantages 列表 */
   #advantages ul {
     list-style: none;
     padding: 0;
-    max-width: 900px;
+    margin: 0;
   }
   #advantages li {
     display: flex;
@@ -211,19 +208,13 @@
       font-size: 1.2rem;
       max-width: 100%;
     }
-    .about-images {
-      float: none;
-      width: 100%;
-      max-height: none;
-      flex-direction: row;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 20px;
+    .section-flex {
+      flex-direction: column;
     }
-    .about-images img {
-      max-height: 140px;
-      width: auto;
-      max-width: 45%;
+    .section-flex .image {
+      flex: none;
+      width: 100%;
+      margin-bottom: 15px;
     }
     #strongbrand img {
       flex: 0 0 40%;
@@ -247,64 +238,77 @@
 </nav>
 
 <section id="home">
-  <div class="content">
+  <div class="content" style="max-width:1200px; margin: 0 auto; padding: 90px 20px 0;">
     <h1>TCE-components</h1>
     <p>Your Trusted Partner in Industrial Electronics & Semiconductors</p>
-    <a href="#contact" class="btn">Contact Us</a>
+    <a href="#contact" class="btn" style="background:#007acc;color:#fff;padding:0.8em 2em;border-radius:5px;display:inline-block;text-decoration:none;font-weight:600;">Contact Us</a>
   </div>
 </section>
 
 <div class="container">
+
+  <!-- About Us 左右布局 -->
   <section id="about">
     <h2>About Us</h2>
-    <div class="about-images">
-      <img src="https://i.ibb.co/chfXnHjt/efb20397c4d98961c33d6fc23b8aae90.jpg" alt="Office and Team Work" />
-      <img src="https://i.ibb.co/c96MdMj/333.png" alt="Team Collaboration" />
+    <div class="section-flex">
+      <div class="text">
+        <p>
+          TCE components is a reliable distributor of industrial electronic components based in Wuhan, China. We specialize in sourcing hard-to-find and obsolete parts from top brands such as ADI, TI, Xilinx, ST, CYPRESS, Microchip, TRACO POWER, and more.
+        </p>
+        <p>
+          Our dedicated team has years of experience in procurement, quality assurance, and logistics management to ensure you get the best service and products.
+          We prioritize fast communication, competitive pricing, and timely delivery to meet your project deadlines worldwide.
+        </p>
+        <p>
+          Whether you need small quantities or bulk orders, we tailor solutions to fit your needs with professionalism and integrity.
+        </p>
+      </div>
+      <div class="image">
+        <img src="https://i.ibb.co/chfXnHjt/efb20397c4d98961c33d6fc23b8aae90.jpg" alt="Office and Team Work" />
+      </div>
     </div>
-    <p>
-      TCE components is a reliable distributor of industrial electronic components based in Wuhan, China. We specialize in sourcing hard-to-find and obsolete parts from top brands such as ADI, TI, Xilinx, ST, CYPRESS, Microchip, TRACO POWER, and more.
-    </p>
-    <p>
-      Our dedicated team has years of experience in procurement, quality assurance, and logistics management to ensure you get the best service and products.
-      We prioritize fast communication, competitive pricing, and timely delivery to meet your project deadlines worldwide.
-    </p>
-    <p>
-      Whether you need small quantities or bulk orders, we tailor solutions to fit your needs with professionalism and integrity.
-    </p>
   </section>
 
+  <!-- Advantages 左右布局 -->
   <section id="advantages">
     <h2>Our Advantages</h2>
-    <ul>
-      <li>
-        <div class="icon">✔️</div>
-        <div class="desc">
-          <strong>Trusted industrial brands</strong><br/>
-          We source from top global manufacturers ensuring quality.
-        </div>
-      </li>
-      <li>
-        <div class="icon">✔️</div>
-        <div class="desc">
-          <strong>Fast response and delivery</strong><br/>
-          Quick turnaround times to meet your project deadlines.
-        </div>
-      </li>
-      <li>
-        <div class="icon">✔️</div>
-        <div class="desc">
-          <strong>English/Russian/Chinese support</strong><br/>
-          Multilingual team ready to assist you anytime.
-        </div>
-      </li>
-      <li>
-        <div class="icon">✔️</div>
-        <div class="desc">
-          <strong>Experienced in sourcing and logistics</strong><br/>
-          Efficient supply chain management ensures smooth delivery.
-        </div>
-      </li>
-    </ul>
+    <div class="section-flex">
+      <div class="text">
+        <ul>
+          <li>
+            <div class="icon">✔️</div>
+            <div class="desc">
+              <strong>Trusted industrial brands</strong><br/>
+              We source from top global manufacturers ensuring quality.
+            </div>
+          </li>
+          <li>
+            <div class="icon">✔️</div>
+            <div class="desc">
+              <strong>Fast response and delivery</strong><br/>
+              Quick turnaround times to meet your project deadlines.
+            </div>
+          </li>
+          <li>
+            <div class="icon">✔️</div>
+            <div class="desc">
+              <strong>English/Russian/Chinese support</strong><br/>
+              Multilingual team ready to assist you anytime.
+            </div>
+          </li>
+          <li>
+            <div class="icon">✔️</div>
+            <div class="desc">
+              <strong>Experienced in sourcing and logistics</strong><br/>
+              Efficient supply chain management ensures smooth delivery.
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="image">
+        <img src="https://i.ibb.co/c96MdMj/333.png" alt="Team Collaboration" />
+      </div>
+    </div>
   </section>
 
   <section id="strongbrand">
