@@ -11,7 +11,7 @@
       padding: 0;
       background: #f9f9f9;
       color: #333;
-      padding-top: 80px; /* 顶部导航栏的空间 */
+      padding-top: 80px; /* 顶部导航栏空间 */
     }
     nav {
       position: fixed;
@@ -26,7 +26,7 @@
       list-style: none;
       display: flex;
       justify-content: center;
-      gap: 30px;
+      gap: 25px;
       margin: 0;
       padding: 0;
     }
@@ -34,6 +34,9 @@
       text-decoration: none;
       color: #003366;
       font-weight: bold;
+    }
+    nav ul li a:hover {
+      color: #0066cc;
     }
     header {
       background-color: #003366;
@@ -61,6 +64,22 @@
       padding: 20px;
       border-radius: 8px;
     }
+    /* 品牌展示区 */
+    #brands div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+    #brands img {
+      height: 60px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    #brands img:hover {
+      transform: scale(1.1);
+    }
     .footer {
       text-align: center;
       font-size: 0.9em;
@@ -75,17 +94,20 @@
       nav ul {
         flex-direction: column;
         align-items: center;
+        gap: 15px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- ✅ 导航栏 -->
+  <!-- 导航栏 -->
   <nav>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#advantages">Advantages</a></li>
+      <li><a href="#brands">Brands</a></li>
+      <li><a href="#strongbrand">Strong Brand</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -96,17 +118,6 @@
   </header>
 
   <div class="container">
-    <section id="brands">
-  <h2>Our Brands</h2>
-  <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center;">
-    <img src="images/siemens.png" alt="Siemens" style="height: 60px;">
-    <img src="images/ifm.png" alt="IFM" style="height: 60px;">
-    <img src="images/parker.png" alt="Parker" style="height: 60px;">
-    <img src="images/ipf.png" alt="IPF" style="height: 60px;">
-    <img src="images/auma.png" alt="Auma" style="height: 60px;">
-  </div>
-</section>
-    
     <section id="about">
       <h2>About Us</h2>
       <p>
@@ -126,17 +137,38 @@
       </ul>
     </section>
 
+    <section id="brands">
+      <h2>Our Brands</h2>
+      <div>
+        <img src="images/siemens.png" alt="Siemens" />
+        <img src="images/ifm.png" alt="IFM" />
+        <img src="images/parker.png" alt="Parker" />
+        <img src="images/ipf.png" alt="IPF" />
+        <img src="images/auma.png" alt="Auma" />
+      </div>
+    </section>
+
+    <section id="strongbrand">
+      <h2>Strong Brand</h2>
+      <p>
+        Our strong brand represents the core strengths and trusted quality that set us apart in the industrial electronics market.
+        We focus on delivering premium solutions with top-tier brands and exceptional service.
+      </p>
+      <!-- 这里你可以添加更多图片或内容介绍 -->
+    </section>
+
     <section id="contact" class="contact">
       <h2>Contact Us</h2>
       <p>Email: tina@tce-components.com</p>
       <p>Website: www.tce-components.com</p>
       <p>Location: Wuhan Huashiyuan North Road Science and Technology Port</p>
-      <!--Contact：+86 15972030970-->
+      <!-- Contact：+86 15972030970 -->
     </section>
   </div>
 
   <footer class="footer">
     &copy; 2025 TCE-COMPONENTS. All rights reserved.
   </footer>
+
 </body>
 </html>
