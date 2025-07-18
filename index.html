@@ -121,6 +121,32 @@
     #strongbrand img:hover {
       transform: scale(1.1);
     }
+
+    /* Advantages 详细内容样式 */
+    #advantages {
+      background-color: #f5f7fa;
+    }
+    #advantages ul {
+      list-style: none;
+      padding: 0;
+    }
+    #advantages li {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: flex-start;
+    }
+    #advantages li div.icon {
+      color: #007acc;
+      font-size: 24px;
+      margin-right: 10px;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    #advantages li div.desc {
+      font-size: 1em;
+      line-height: 1.4;
+    }
+
     .contact {
       background-color: #eee;
       padding: 20px;
@@ -195,10 +221,34 @@
         <div class="text">
           <h2>Our Advantages</h2>
           <ul>
-            <li>✔️ Trusted industrial brands</li>
-            <li>✔️ Fast response and delivery</li>
-            <li>✔️ English/Russian/Chinese support</li>
-            <li>✔️ Experienced in sourcing and logistics</li>
+            <li>
+              <div class="icon">✔️</div>
+              <div class="desc">
+                <strong>Trusted industrial brands</strong><br/>
+                We source from top global manufacturers ensuring quality.
+              </div>
+            </li>
+            <li>
+              <div class="icon">✔️</div>
+              <div class="desc">
+                <strong>Fast response and delivery</strong><br/>
+                Quick turnaround times to meet your project deadlines.
+              </div>
+            </li>
+            <li>
+              <div class="icon">✔️</div>
+              <div class="desc">
+                <strong>English/Russian/Chinese support</strong><br/>
+                Multilingual team ready to assist you anytime.
+              </div>
+            </li>
+            <li>
+              <div class="icon">✔️</div>
+              <div class="desc">
+                <strong>Experienced in sourcing and logistics</strong><br/>
+                Efficient supply chain management ensures smooth delivery.
+              </div>
+            </li>
           </ul>
         </div>
       </div>
