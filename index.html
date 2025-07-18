@@ -1,318 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>TCE-components</title>
-<style>
-  /* Reset & base */
-  * {
-    box-sizing: border-box;
-  }
-  body, html {
-    margin: 0; padding: 0;
-    font-family: Arial, sans-serif;
-    color: #333;
-    background: #fff;
-    scroll-behavior: smooth;
-  }
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  /* Navbar */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    background: white;
-    border-bottom: 1px solid #ddd;
-    z-index: 1000;
-  }
-  nav ul {
-    list-style: none;
-    margin: 0; padding: 0 20px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    height: 50px;
-    align-items: center;
-  }
-  nav ul li a {
-    font-weight: 600;
-    color: #003366;
-    transition: color 0.3s;
-  }
-  nav ul li a:hover {
-    color: #007acc;
-  }
-
-  /* Hero / Home Section */
-  #home {
-    position: relative;
-    width: 100%;
-    height: 90vh;
-    background: url('https://i.ibb.co/qLDYk30C/222.jpg') no-repeat center center/cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 20px;
-    color: white;
-    text-shadow: 0 0 10px rgba(0,0,0,0.7);
-  }
-  #home .content {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  #home h1 {
-    font-size: 3.5rem;
-    margin-bottom: 0.3em;
-  }
-  #home p {
-    font-size: 1.5rem;
-    margin-bottom: 1.5em;
-    max-width: 600px;
-  }
-  #home .btn {
-    display: inline-block;
-    background-color: #007acc;
-    padding: 0.8em 2em;
-    border-radius: 5px;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  #home .btn:hover {
-    background-color: #005f99;
-  }
-
-  /* Sections container */
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 80px 20px 40px; /* top padding to avoid nav */
-  }
-
-  section {
-    margin-bottom: 60px;
-  }
-
-  h2 {
-    color: #003366;
-    margin-bottom: 20px;
-    font-weight: 700;
-  }
-
-  /* About */
-  #about p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    max-width: 900px;
-  }
-  #about img {
-    max-width: 400px;
-    width: 100%;
-    float: right;
-    margin-left: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
-
-  /* Advantages */
-  #advantages ul {
-    list-style: none;
-    padding: 0;
-    max-width: 900px;
-  }
-  #advantages li {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 20px;
-  }
-  #advantages li .icon {
-    color: #007acc;
-    font-size: 24px;
-    margin-right: 12px;
-    line-height: 1;
-  }
-  #advantages li .desc {
-    font-size: 1rem;
-    line-height: 1.4;
-  }
-
-  /* Strong Brand */
-  #strongbrand {
-    background-color: #f0f0f0;
-    padding: 40px 0;
-  }
-  #strongbrand .brands {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  #strongbrand img {
-    height: 60px;
-    flex: 0 0 18%;
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
-  #strongbrand img:hover {
-    transform: scale(1.1);
-  }
-  #strongbrand p {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-    color: #444;
-  }
-
-  /* Contact */
-  #contact {
-    max-width: 900px;
-    margin: 0 auto 40px;
-    background: #eee;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  #contact p {
-    margin: 6px 0;
-  }
-
-  /* Footer */
-  footer {
-    background: #003366;
-    color: white;
-    text-align: center;
-    padding: 15px 20px;
-    font-size: 0.9rem;
-  }
-
-  /* Responsive */
-  @media (max-width: 900px) {
-    #home h1 {
-      font-size: 2.5rem;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TCE-components</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
     }
-    #home p {
-      font-size: 1.2rem;
-      max-width: 100%;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+      background: #f9f9f9;
+      overflow: hidden;
+      height: 100vh;
     }
-    #about img {
-      float: none;
-      display: block;
-      margin: 20px auto;
-      max-width: 90%;
-    }
-    #strongbrand img {
-      flex: 0 0 40%;
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
     }
     nav ul {
-      gap: 15px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
     }
-  }
-</style>
+    nav ul li a {
+      text-decoration: none;
+      color: #003366;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    nav ul li a:hover {
+      color: #0066cc;
+    }
+    .container {
+      max-width: 1100px;  /* 宽一点 */
+      margin: 0 auto;
+      padding: 100px 20px 60px; /* 顶部padding给nav留空间 */
+    }
+    section {
+      margin-bottom: 80px;  /* 每个板块间距增大 */
+    }
+    h2 {
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    /* Home 背景图样式 */
+    #home {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url('https://i.ibb.co/qLDYk30C/222.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #f0f0f0;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+      height: 100vh;
+      text-align: center;
+      padding: 0 20px;
+    }
+    #home h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+    #home p {
+      font-size: 1.5em;
+      margin-top: 10px;
+    }
+
+    /* About Us 左右两栏 */
+    #about {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+      max-width: 900px;
+      margin: 0 auto 80px;
+    }
+    #about .text {
+      flex: 1;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+    #about .text p {
+      margin-bottom: 1.2em;
+    }
+    #about .image {
+      flex: 1;
+      max-width: 400px;
+    }
+    #about .image img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      object-fit: cover;
+    }
+
+    /* Strong Brand 区背景 */
+    #strongbrand {
+      background-color: #f0f0f0;
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+    #strongbrand div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+    #strongbrand img {
+      height: 60px;
+      flex: 0 0 18%;
+      max-width: 100%;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    #strongbrand img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Advantages 详细内容样式 */
+    #advantages {
+      background-color: #f5f7fa;
+    }
+    #advantages ul {
+      list-style: none;
+      padding: 0;
+    }
+    #advantages li {
+      margin-bottom: 24px;
+      display: flex;
+      align-items: flex-start;
+    }
+    #advantages li div.icon {
+      color: #007acc;
+      font-size: 24px;
+      margin-right: 10px;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    #advantages li div.desc {
+      font-size: 1em;
+      line-height: 1.4;
+    }
+
+    .contact {
+      background-color: #eee;
+      padding: 20px;
+      border-radius: 8px;
+      color: #333;
+    }
+    .footer {
+      text-align: center;
+      font-size: 0.9em;
+      padding: 20px;
+      background: #003366;
+      color: white;
+    }
+
+    @media (max-width: 900px) {
+      #about {
+        flex-direction: column;
+        margin-bottom: 60px;
+      }
+      #about .image {
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+      #strongbrand img {
+        flex: 0 0 40%;
+        margin-bottom: 10px;
+      }
+      section {
+        padding: 40px 15px;
+        height: auto;
+      }
+      .container {
+        height: auto;
+        overflow-y: visible;
+      }
+      #home h1 {
+        font-size: 2.2em;
+      }
+      #home p {
+        font-size: 1.2em;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<nav>
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#advantages">Advantages</a></li>
-    <li><a href="#strongbrand">Strong Brand</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<section id="home">
-  <div class="content">
-    <h1>TCE-components</h1>
-    <p>Your Trusted Partner in Industrial Electronics & Semiconductors</p>
-    <a href="#contact" class="btn">Contact Us</a>
-  </div>
-</section>
-
-<div class="container">
-  <section id="about">
-    <h2>About Us</h2>
-    <p>
-      <img src="https://i.ibb.co/chfXnHjt/efb20397c4d98961c33d6fc23b8aae90.jpg" alt="Office and Team Work" />
-      TCE components is a reliable distributor of industrial electronic components based in Wuhan, China. We specialize in sourcing hard-to-find and obsolete parts from top brands such as ADI, TI, Xilinx, ST, CYPRESS, Microchip, TRACO POWER, and more.
-    </p>
-    <p>
-      Our dedicated team has years of experience in procurement, quality assurance, and logistics management to ensure you get the best service and products.
-      We prioritize fast communication, competitive pricing, and timely delivery to meet your project deadlines worldwide.
-    </p>
-    <p>
-      Whether you need small quantities or bulk orders, we tailor solutions to fit your needs with professionalism and integrity.
-    </p>
-  </section>
-
-  <section id="advantages">
-    <h2>Our Advantages</h2>
+  <nav>
     <ul>
-      <li>
-        <div class="icon">✔️</div>
-        <div class="desc">
-          <strong>Trusted industrial brands</strong><br/>
-          We source from top global manufacturers ensuring quality.
-        </div>
-      </li>
-      <li>
-        <div class="icon">✔️</div>
-        <div class="desc">
-          <strong>Fast response and delivery</strong><br/>
-          Quick turnaround times to meet your project deadlines.
-        </div>
-      </li>
-      <li>
-        <div class="icon">✔️</div>
-        <div class="desc">
-          <strong>English/Russian/Chinese support</strong><br/>
-          Multilingual team ready to assist you anytime.
-        </div>
-      </li>
-      <li>
-        <div class="icon">✔️</div>
-        <div class="desc">
-          <strong>Experienced in sourcing and logistics</strong><br/>
-          Efficient supply chain management ensures smooth delivery.
-        </div>
-      </li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#advantages">Advantages</a></li>
+      <li><a href="#strongbrand">Strong Brand</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-  </section>
+  </nav>
 
-  <section id="strongbrand">
-    <h2>Strong Brand</h2>
-    <p>Whatever you’re looking for, we’ve got it.</p>
-    <div class="brands">
-      <img src="images/brand1.png" alt="Brand 1" />
-      <img src="images/brand2.png" alt="Brand 2" />
-      <img src="images/brand3.png" alt="Brand 3" />
-      <img src="images/brand4.png" alt="Brand 4" />
-      <img src="images/brand5.png" alt="Brand 5" />
-      <img src="images/brand6.png" alt="Brand 6" />
-      <img src="images/brand7.png" alt="Brand 7" />
-      <img src="images/brand8.png" alt="Brand 8" />
-      <img src="images/brand9.png" alt="Brand 9" />
-      <img src="images/brand10.png" alt="Brand 10" />
-    </div>
-  </section>
+  <div class="container">
+    <section id="home">
+      <h1>TCE-components</h1>
+      <p>Your Trusted Partner in Industrial Electronics & Semiconductors</p>
+    </section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: tina@tce-components.com</p>
-    <p>Website: www.tce-component.shop</p>
-    <p>Location: Wuhan Huashiyuan North Road Science and Technology Port</p>
-  </section>
-</div>
+    <section id="about">
+      <h2>About Us</h2>
+      <div class="text">
+        <p>
+          TCE components is a reliable distributor of industrial electronic components based in Wuhan, China. We specialize in sourcing hard-to-find and obsolete parts from top brands such as ADI, TI, Xilinx, ST, CYPRESS, Microchip, TRACO POWER, and more.
+        </p>
+        <p>
+          Our dedicated team has years of experience in procurement, quality assurance, and logistics management to ensure you get the best service and products.
+          We prioritize fast communication, competitive pricing, and timely delivery to meet your project deadlines worldwide.
+        </p>
+        <p>
+          Whether you need small quantities or bulk orders, we tailor solutions to fit your needs with professionalism and integrity.
+        </p>
+      </div>
+      <div class="image">
+        <img src="https://i.ibb.co/chfXnHjt/efb20397c4d98961c33d6fc23b8aae90.jpg" alt="Office and Team Work" />
+      </div>
+    </section>
 
-<footer>
-  &copy; 2025 TCE-COMPONENTS. All rights reserved.
-</footer>
+    <section id="advantages">
+      <h2>Our Advantages</h2>
+      <ul>
+        <li>
+          <div class="icon">✔️</div>
+          <div class="desc">
+            <strong>Trusted industrial brands</strong><br/>
+            We source from top global manufacturers ensuring quality.
+          </div>
+        </li>
+        <li>
+          <div class="icon">✔️</div>
+          <div class="desc">
+            <strong>Fast response and delivery</strong><br/>
+            Quick turnaround times to meet your project deadlines.
+          </div>
+        </li>
+        <li>
+          <div class="icon">✔️</div>
+          <div class="desc">
+            <strong>English/Russian/Chinese support</strong><br/>
+            Multilingual team ready to assist you anytime.
+          </div>
+        </li>
+        <li>
+          <div class="icon">✔️</div>
+          <div class="desc">
+            <strong>Experienced in sourcing and logistics</strong><br/>
+            Efficient supply chain management ensures smooth delivery.
+          </div>
+        </li>
+      </ul>
+    </section>
 
-</body>
-</html>
+    <section id="strongbrand">
+      <h2>Strong Brand</h2>
+      <p style="text-align:center; margin-bottom: 40px;">Whatever you’re looking for, we’ve got it.</p>
+      <div>
+        <img src="images/brand1.png" alt="Brand 1" />
+        <img src="images/brand2.png" alt="Brand 2" />
+        <img src="images/brand3.png" alt="Brand 3" />
+        <img src="images/brand4.png" alt="Brand 4" />
+        <img src="images/brand5.png" alt="Brand 5"
