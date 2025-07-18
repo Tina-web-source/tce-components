@@ -2,112 +2,119 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TCE Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TCE Homepage</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #fff;
+      background: #f7f7f7;
     }
     header {
-      background-image: url('https://i.ibb.co/qLDYk30C/222.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
+      background: #051c39;
       color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      padding: 100px 0;
       text-align: center;
     }
     header h1 {
-      font-size: 4rem;
-      background: rgba(0,0,0,0.5);
-      padding: 1rem;
-      border-radius: 10px;
+      margin: 0;
+      font-size: 48px;
+    }
+    header p {
+      font-size: 20px;
+      margin-top: 10px;
     }
     .section {
       display: flex;
-      padding: 60px 10%;
-      gap: 40px;
+      justify-content: space-between;
       align-items: center;
+      padding: 80px 10%;
+      background: white;
+      gap: 40px;
     }
     .section:nth-child(even) {
-      flex-direction: row-reverse;
+      background: #f0f0f0;
     }
-    .text {
+    .text-block {
       flex: 1;
     }
-    .text h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #222;
+    .text-block h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
     }
-    .text p {
-      color: #555;
+    .text-block p {
+      font-size: 16px;
+      line-height: 1.6;
     }
-    .image {
+    .image-block {
       flex: 1;
       display: flex;
       flex-direction: column;
       gap: 20px;
     }
-    .image img {
+    .image-block img {
       width: 100%;
-      max-height: 250px;
+      height: auto;
+      border-radius: 8px;
       object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    .brand-section {
+    footer {
+      background: #051c39;
+      color: white;
       text-align: center;
-      padding: 80px 10%;
-      background-color: #f4f4f4;
+      padding: 40px 10%;
     }
-    .brand-section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-    .brand-section p {
-      font-size: 1.1rem;
-      color: #555;
+    footer p {
+      margin: 5px 0;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Welcome to TCE</h1>
+    <p>Your trusted global supplier of electronic components</p>
   </header>
 
-  <section class="section">
-    <div class="text">
+  <!-- About Us Section -->
+  <div class="section">
+    <div class="text-block">
       <h2>About Us</h2>
-      <p>We are a professional chip components supplier offering quality products and competitive solutions. We help clients worldwide source electronic components efficiently and reliably.</p>
+      <p>TCE (Tina Chip Electronics) is a dedicated distributor of electronic components. With years of experience and global sourcing capabilities, we help our clients find high-quality components efficiently and reliably.</p>
     </div>
-    <div class="image">
-      <img src="https://i.ibb.co/qLDYk30C/222.jpg" alt="About Us" />
+    <div class="image-block">
+      <img src="https://i.ibb.co/ZcbCfH3/222.jpg" alt="About Image 1" />
+      <img src="https://via.placeholder.com/600x400?text=About+Image+2" alt="About Image 2" />
     </div>
-  </section>
+  </div>
 
-  <section class="section">
-    <div class="text">
+  <!-- Our Advantages Section -->
+  <div class="section">
+    <div class="text-block">
       <h2>Our Advantages</h2>
-      <p>Reliable sourcing, fast response, high-quality service and strong partnership with leading brands. Our efficient logistics ensure timely delivery and optimal cost performance.</p>
+      <p>We provide competitive pricing, fast response times, and flexible delivery options. Our global network ensures that even hard-to-find components are within your reach.</p>
     </div>
-    <div class="image">
-      <img src="https://i.ibb.co/c96MdMj/333.png" alt="Advantages" />
+    <div class="image-block">
+      <img src="https://i.ibb.co/c96MdMj/333.png" alt="Advantage Image 1" />
+      <img src="https://via.placeholder.com/600x400?text=Advantage+Image+2" alt="Advantage Image 2" />
     </div>
-  </section>
+  </div>
 
-  <section class="brand-section">
-    <h2>Strong Brand Partnerships</h2>
-    <p>We work closely with Siemens, Parker, IPF, IFM, Auma and more.</p>
-  </section>
+  <!-- Strong Brand Section -->
+  <div class="section">
+    <div class="text-block">
+      <h2>Strong Brands</h2>
+      <p>We specialize in distributing well-known brands like Siemens, Parker, IPF, IFM, and Auma. Quality and authenticity are at the core of what we deliver.</p>
+    </div>
+    <div class="image-block">
+      <img src="https://via.placeholder.com/600x400?text=Brands" alt="Brands Image" />
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 TCE - Tina Chip Electronics</p>
+    <p>All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
