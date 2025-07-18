@@ -51,7 +51,7 @@
   #home {
     position: relative;
     width: 100%;
-    height: 100vh; /* 修改为100vh */
+    height: 90vh;
     background: url('https://i.ibb.co/qLDYk30C/222.jpg') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
@@ -95,7 +95,7 @@
   }
 
   section {
-    margin-bottom: 80px; /* 加大板块间距 */
+    margin-bottom: 60px;
   }
 
   h2 {
@@ -120,10 +120,16 @@
   }
 
   /* Advantages */
+  #advantages {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 0 auto;
+  }
   #advantages ul {
     list-style: none;
     padding: 0;
-    max-width: 900px;
+    width: 55%;
   }
   #advantages li {
     display: flex;
@@ -139,6 +145,19 @@
   #advantages li .desc {
     font-size: 1rem;
     line-height: 1.4;
+  }
+  #advantages .images {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  #advantages .images img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    object-fit: cover;
+    max-height: 200px;
   }
 
   /* Strong Brand */
@@ -206,6 +225,23 @@
       margin: 20px auto;
       max-width: 90%;
     }
+    #advantages {
+      flex-direction: column;
+    }
+    #advantages ul {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    #advantages .images {
+      width: 100%;
+      flex-direction: row;
+      gap: 10px;
+      overflow-x: auto;
+    }
+    #advantages .images img {
+      max-height: 150px;
+      flex: 0 0 auto;
+    }
     #strongbrand img {
       flex: 0 0 40%;
     }
@@ -252,7 +288,6 @@
   </section>
 
   <section id="advantages">
-    <h2>Our Advantages</h2>
     <ul>
       <li>
         <div class="icon">✔️</div>
@@ -283,6 +318,11 @@
         </div>
       </li>
     </ul>
+
+    <div class="images">
+      <img src="https://i.ibb.co/4ZW4fpbC/111.jpg" alt="Advantages Image 1" />
+      <img src="https://i.ibb.co/c96MdMj/333.png" alt="Advantages Image 2" />
+    </div>
   </section>
 
   <section id="strongbrand">
