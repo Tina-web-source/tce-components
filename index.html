@@ -110,17 +110,18 @@
     line-height: 1.6;
     max-width: 900px;
   }
-  /* 包裹两张图片容器 */
+  /* 右侧两张图片容器 */
   .about-images {
     float: right;
     margin-left: 20px;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-width: 400px;
+    max-width: 380px;
   }
   .about-images img {
     width: 100%;
+    max-height: 180px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     object-fit: contain;
@@ -207,18 +208,16 @@
       font-size: 1.2rem;
       max-width: 100%;
     }
-    /* 手机屏幕下 About 图片堆叠 */
     .about-images {
       float: none;
+      max-width: 100%;
       flex-direction: row;
       justify-content: center;
-      max-width: 100%;
-      margin: 20px 0;
-      gap: 10px;
     }
     .about-images img {
+      max-height: 140px;
       width: auto;
-      max-height: 150px;
+      max-width: 45%;
     }
     #strongbrand img {
       flex: 0 0 40%;
@@ -252,11 +251,11 @@
 <div class="container">
   <section id="about">
     <h2>About Us</h2>
+    <div class="about-images">
+      <img src="https://i.ibb.co/chfXnHjt/efb20397c4d98961c33d6fc23b8aae90.jpg" alt="Office and Team Work" />
+      <img src="https://i.ibb.co/c96MdMj/333.png" alt="Team Collaboration" />
+    </div>
     <p>
-      <span class="about-images">
-        <img src="https://i.ibb.co/chfXnHjt/efb20397c4d98961c33d6fc23b8aae90.jpg" alt="Office and Team Work" />
-        <img src="https://i.ibb.co/c96MdMj/333.png" alt="Additional Image" />
-      </span>
       TCE components is a reliable distributor of industrial electronic components based in Wuhan, China. We specialize in sourcing hard-to-find and obsolete parts from top brands such as ADI, TI, Xilinx, ST, CYPRESS, Microchip, TRACO POWER, and more.
     </p>
     <p>
