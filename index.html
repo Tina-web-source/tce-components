@@ -1,220 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>TCE-components</title>
-<style>
-  * { box-sizing: border-box; }
-  body, html {
-    margin: 0; padding: 0;
-    font-family: Arial, sans-serif;
-    color: #333;
-    background: #fff;
-    scroll-behavior: smooth;
-  }
-  a { text-decoration: none; color: inherit; }
-
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    background: white;
-    border-bottom: 1px solid #ddd;
-    z-index: 1000;
-  }
-  nav ul {
-    list-style: none;
-    margin: 0; padding: 0 20px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    height: 50px;
-    align-items: center;
-  }
-  nav ul li a {
-    font-weight: 600;
-    color: #003366;
-    transition: color 0.3s;
-  }
-  nav ul li a:hover {
-    color: #007acc;
-  }
-
-  #home {
-    position: relative;
-    width: 100%;
-    height: 90vh;
-    background: url('https://i.ibb.co/qLDYk30C/222.jpg') no-repeat center center/cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 20px;
-    color: white;
-    text-shadow: 0 0 10px rgba(0,0,0,0.7);
-  }
-  #home .content {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  #home h1 {
-    font-size: 3.5rem;
-    margin-bottom: 0.3em;
-  }
-  #home p {
-    font-size: 1.5rem;
-    margin-bottom: 1.5em;
-    max-width: 600px;
-  }
-  #home .btn {
-    display: inline-block;
-    background-color: #007acc;
-    padding: 0.8em 2em;
-    border-radius: 5px;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  #home .btn:hover {
-    background-color: #005f99;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 80px 20px 40px;
-  }
-  section {
-    margin-bottom: 60px;
-  }
-  h2 {
-    color: #003366;
-    margin-bottom: 20px;
-    font-weight: 700;
-  }
-
-  .section-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-    max-width: 900px;
-  }
-  .section-flex .text {
-    flex: 1 1 60%;
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-  .section-flex .image {
-    flex: 0 0 35%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  .section-flex .image img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    object-fit: cover;
-  }
-
-  #advantages ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  #advantages li {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 20px;
-  }
-  #advantages li .icon {
-    color: #007acc;
-    font-size: 24px;
-    margin-right: 12px;
-    line-height: 1;
-  }
-  #advantages li .desc {
-    font-size: 1rem;
-    line-height: 1.4;
-  }
-
-  #strongbrand {
-    background-color: #f0f0f0;
-    padding: 40px 0;
-  }
-  #strongbrand .brands {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  #strongbrand img {
-    height: 60px;
-    flex: 0 0 18%;
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
-  #strongbrand img:hover {
-    transform: scale(1.1);
-  }
-  #strongbrand p {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-    color: #444;
-  }
-
-  #contact {
-    max-width: 900px;
-    margin: 0 auto 40px;
-    background: #eee;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  #contact p {
-    margin: 6px 0;
-  }
-  #contact a {
-    color: #007acc;
-    font-weight: bold;
-  }
-
-  footer {
-    background: #003366;
-    color: white;
-    text-align: center;
-    padding: 15px 20px;
-    font-size: 0.9rem;
-  }
-
-  @media (max-width: 900px) {
-    #home h1 {
-      font-size: 2.5rem;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TCE-components</title>
+  <style>
+    * { box-sizing: border-box; }
+    body, html {
+      margin: 0; padding: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+      background: #fff;
+      scroll-behavior: smooth;
     }
-    #home p {
-      font-size: 1.2rem;
-      max-width: 100%;
-    }
-    .section-flex {
-      flex-direction: column;
-    }
-    .section-flex .image {
-      flex: none;
-      width: 100%;
-      margin-bottom: 15px;
-    }
-    #strongbrand img {
-      flex: 0 0 45%;
-      height: 50px;
+    a { text-decoration: none; color: inherit; }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: white;
+      border-bottom: 1px solid #ddd;
+      z-index: 1000;
     }
     nav ul {
-      gap: 15px;
+      list-style: none;
+      margin: 0; padding: 0 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      height: 50px;
+      align-items: center;
     }
-  }
-</style>
+    nav ul li a {
+      font-weight: 600;
+      color: #003366;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #007acc;
+    }
+
+    #home {
+      position: relative;
+      width: 100%;
+      height: 90vh;
+      background: url('https://i.ibb.co/qLDYk30C/222.jpg') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 20px;
+      color: white;
+      text-shadow: 0 0 10px rgba(0,0,0,0.7);
+    }
+    #home .content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    #home h1 {
+      font-size: 3.5rem;
+      margin-bottom: 0.3em;
+    }
+    #home p {
+      font-size: 1.5rem;
+      margin-bottom: 1.5em;
+      max-width: 600px;
+    }
+    #home .btn {
+      display: inline-block;
+      background-color: #007acc;
+      padding: 0.8em 2em;
+      border-radius: 5px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    #home .btn:hover {
+      background-color: #005f99;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px 40px;
+    }
+    section {
+      margin-bottom: 60px;
+    }
+    h2 {
+      color: #003366;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .section-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      max-width: 900px;
+    }
+    .section-flex .text {
+      flex: 1 1 60%;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .section-flex .image {
+      flex: 0 0 40%;
+      max-width: 400px;
+    }
+    .section-flex .image img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      object-fit: cover;
+    }
+
+    #advantages ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    #advantages li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    #advantages li .icon {
+      color: #007acc;
+      font-size: 24px;
+      margin-right: 12px;
+      line-height: 1;
+    }
+    #advantages li .desc {
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    #strongbrand {
+      background-color: #f0f0f0;
+      padding: 40px 0;
+    }
+    #strongbrand .brands {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    #strongbrand img {
+      height: 60px;
+      flex: 0 0 18%;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    #strongbrand img:hover {
+      transform: scale(1.1);
+    }
+    #strongbrand p {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    #contact {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      background: #eee;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    #contact p {
+      margin: 6px 0;
+    }
+    #contact a {
+      color: #007acc;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 15px 20px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      #home h1 {
+        font-size: 2.5rem;
+      }
+      #home p {
+        font-size: 1.2rem;
+        max-width: 100%;
+      }
+      .section-flex {
+        flex-direction: column;
+      }
+      .section-flex .image {
+        flex: none;
+        width: 100%;
+        margin-bottom: 15px;
+      }
+      #strongbrand img {
+        flex: 0 0 45%;
+        height: 50px;
+      }
+      nav ul {
+        gap: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -255,8 +253,7 @@
         </p>
       </div>
       <div class="image">
-        <img src="https://i.ibb.co/chfXnHjt/efb20397c4d98961c33d6fc23b8aae90.jpg" alt="Office" />
-        <img src="https://i.ibb.co/5kB6Tcq/team2.jpg" alt="Team" />
+        <img src="https://i.ibb.co/chfXnHjt/efb20397c4d98961c33d6fc23b8aae90.jpg" alt="Office and Team Work" />
       </div>
     </div>
   </section>
@@ -269,25 +266,36 @@
         <ul>
           <li>
             <div class="icon">✔️</div>
-            <div class="desc"><strong>Trusted industrial brands</strong><br/>We source from top global manufacturers ensuring quality.</div>
+            <div class="desc">
+              <strong>Trusted industrial brands</strong><br/>
+              We source from top global manufacturers ensuring quality.
+            </div>
           </li>
           <li>
             <div class="icon">✔️</div>
-            <div class="desc"><strong>Fast response and delivery</strong><br/>Quick turnaround times to meet your project deadlines.</div>
+            <div class="desc">
+              <strong>Fast response and delivery</strong><br/>
+              Quick turnaround times to meet your project deadlines.
+            </div>
           </li>
           <li>
             <div class="icon">✔️</div>
-            <div class="desc"><strong>English/Russian/Chinese support</strong><br/>Multilingual team ready to assist you anytime.</div>
+            <div class="desc">
+              <strong>English/Russian/Chinese support</strong><br/>
+              Multilingual team ready to assist you anytime.
+            </div>
           </li>
           <li>
             <div class="icon">✔️</div>
-            <div class="desc"><strong>Experienced in sourcing and logistics</strong><br/>Efficient supply chain management ensures smooth delivery.</div>
+            <div class="desc">
+              <strong>Experienced in sourcing and logistics</strong><br/>
+              Efficient supply chain management ensures smooth delivery.
+            </div>
           </li>
         </ul>
       </div>
       <div class="image">
-        <img src="https://i.ibb.co/c96MdMj/333.png" alt="Collaboration" />
-        <img src="https://i.ibb.co/TcSKdPM/logistics.jpg" alt="Logistics" />
+        <img src="https://i.ibb.co/c96MdMj/333.png" alt="Team Collaboration" />
       </div>
     </div>
   </section>
