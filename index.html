@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TCE Components sources active and passive electronic components and modules for OEM, EMS and electronics businesses worldwide.">
+  <meta name="description" content="TCE Components provides electronic component sourcing support for OEM, EMS and electronics businesses worldwide.">
   <meta name="theme-color" content="#071426">
   <title>TCE Components | Electronic Component Sourcing</title>
 
@@ -29,7 +29,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 85px;
+      scroll-padding-top: 90px;
     }
 
     body {
@@ -53,7 +53,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(7, 20, 38, 0.96);
+      background: rgba(7, 20, 38, 0.97);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(12px);
     }
@@ -80,7 +80,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 23px;
       flex-wrap: wrap;
     }
 
@@ -288,33 +288,89 @@
       font-size: 14px;
     }
 
-    /* Brand image section */
+    /* Brand coverage cards - no external images required */
     .brands-section {
       background:
         radial-gradient(ellipse at 50% 50%, rgba(31, 94, 147, 0.13), transparent 70%),
         var(--bg);
     }
 
-    .brand-image-wrap {
-      padding: 12px;
-      background: #0b1a2d;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
+    .brand-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
     }
 
-    .brand-image {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 6px;
+    .brand-card {
+      min-height: 145px;
+      padding: 22px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      text-align: center;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: linear-gradient(145deg, #10243d, #0b1a2d);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .brand-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(88, 213, 232, 0.65);
+    }
+
+    .brand-mark {
+      color: var(--cyan);
+      font-size: 25px;
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-card:nth-child(2) .brand-mark {
+      color: #7eb7ff;
+    }
+
+    .brand-card:nth-child(3) .brand-mark {
+      color: #f2f6ff;
+    }
+
+    .brand-card:nth-child(4) .brand-mark {
+      font-size: 18px;
+    }
+
+    .brand-card:nth-child(5) .brand-mark {
+      color: #91b8ff;
+      font-size: 21px;
+    }
+
+    .brand-card:nth-child(6) .brand-mark {
+      color: #a5d5ff;
+      font-size: 21px;
+    }
+
+    .brand-card:nth-child(7) .brand-mark {
+      color: #a6e3ec;
+    }
+
+    .brand-card:nth-child(8) .brand-mark {
+      color: #8ddff0;
+      font-size: 22px;
+    }
+
+    .brand-name {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
     }
 
     .brand-note {
-      margin-top: 18px;
+      margin-top: 22px;
       text-align: center;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
     }
 
     .process-grid {
@@ -380,10 +436,6 @@
       overflow-wrap: anywhere;
     }
 
-    .contact-action {
-      flex-shrink: 0;
-    }
-
     footer {
       padding: 28px 0;
       color: var(--muted);
@@ -428,8 +480,8 @@
         padding: 28px;
       }
 
-      .contact-action {
-        flex-shrink: 1;
+      .brand-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -458,15 +510,23 @@
         margin: 12px 0 0;
       }
 
-      .brand-image-wrap {
-        padding: 5px;
+      .brand-grid {
+        gap: 10px;
+      }
+
+      .brand-card {
+        min-height: 120px;
+        padding: 16px 8px;
+      }
+
+      .brand-mark {
+        font-size: 21px;
       }
     }
   </style>
 </head>
 
 <body>
-
   <header class="navbar">
     <div class="container nav-inner">
       <a class="logo" href="#home" aria-label="TCE Components Home">
@@ -613,18 +673,51 @@
           </p>
         </div>
 
-        <div class="brand-image-wrap">
-          <img
-            class="brand-image"
-            src="./brand-coverage.png"
-            alt="Brands we source include Texas Instruments, STMicroelectronics, Analog Devices, Microchip, AMD Xilinx, Lattice, Altera, and TRACO POWER"
-            loading="lazy"
-          >
+        <div class="brand-grid">
+          <div class="brand-card">
+            <div class="brand-mark">TI</div>
+            <div class="brand-name">Texas Instruments</div>
+          </div>
+
+          <div class="brand-card">
+            <div class="brand-mark">ST</div>
+            <div class="brand-name">STMicroelectronics</div>
+          </div>
+
+          <div class="brand-card">
+            <div class="brand-mark">ADI</div>
+            <div class="brand-name">Analog Devices</div>
+          </div>
+
+          <div class="brand-card">
+            <div class="brand-mark">MICROCHIP</div>
+            <div class="brand-name">Microchip Technology</div>
+          </div>
+
+          <div class="brand-card">
+            <div class="brand-mark">AMD XILINX</div>
+            <div class="brand-name">AMD Xilinx</div>
+          </div>
+
+          <div class="brand-card">
+            <div class="brand-mark">LATTICE</div>
+            <div class="brand-name">Lattice Semiconductor</div>
+          </div>
+
+          <div class="brand-card">
+            <div class="brand-mark">ALTERA</div>
+            <div class="brand-name">Altera</div>
+          </div>
+
+          <div class="brand-card">
+            <div class="brand-mark">TRACO POWER</div>
+            <div class="brand-name">Power Conversion Products</div>
+          </div>
         </div>
 
         <p class="brand-note">
           Brand names and trademarks belong to their respective owners.
-          Brand listing does not imply authorized distributor status.
+          Listing a brand does not imply authorized distributor status.
         </p>
       </div>
     </section>
@@ -697,7 +790,7 @@
             </a>
           </div>
 
-          <div class="contact-action">
+          <div>
             <a class="button button-primary"
                href="mailto:mark.zeng@tcecomponent.shop?subject=Electronic%20Component%20Inquiry">
               Email Your Inquiry
@@ -719,6 +812,5 @@
     document.getElementById("year").textContent =
       new Date().getFullYear();
   </script>
-
 </body>
 </html>
